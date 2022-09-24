@@ -151,13 +151,14 @@ function tablaDelSeis(){
   }
   return producto;
 }
-
+git
 function tieneTresDigitos(numero){
   //Leer un número entero y retornar true si tiene 3 dígitos. Caso contrario, retorna false.
   //Escribe tu código aquí
-  numero= Math.abs(numero);
-  if(numero>=100 && numero<1000){return true;}
-  else{return false;}
+  var cadena= Math.abs(numero).toString();
+	var longitud= cadena.length;	
+	if(longitud===3){return true;}
+	else {return false;}
 }
 
 function doWhile(numero) {
