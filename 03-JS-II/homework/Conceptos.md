@@ -43,7 +43,8 @@ acumIndice  = acumIndice    +       i
 Primero vamos a usar una variable donde acumularemos la suma de i a medida que entra en el bucle.
 
 ```javascript
-var acumIndice = 0; //Iniciamos la variable fuera del for a cero
+var acumIndice = 0; //Iniciamos la variable fuera del
+// for a cero
 ```
 
 
@@ -55,7 +56,9 @@ Si seguimos la instrucción, nos dice que debemos empezar con la palabra reserva
 
 for(i=0;...;...) 
 
-//1er Paso: iniciamos la variable "i" a cero. Ya veremos mas adelante las instrucciónes a usar donde estan los puntos suspensivos.
+//1er Paso: iniciamos la variable "i" a cero. Ya 
+//veremos mas adelante las instrucciónes a usar donde
+//estan los puntos suspensivos.
 
 ```
 Al iniciar la variable indice `i` con valor a cero (0) le estamos indicando al bucle for, que sus instrucciones dentro de los corchetes`{}` empiezan con este valor.
@@ -64,7 +67,11 @@ Acto seguido, el for evaluará bien sea el indice u otra variable bajo una condi
 ```javascript
 for(i=0; i<=5;...){}
 
-//2 Paso: Se evalua si el valor que contiene el indice 'i' (0) es menor que 5. Una vez llegue a 5 saldrá del bucle o repetición de código, que para este caso se le ha indicado seguir en el bucle mientras sea menor o igual a 5.
+//2 Paso: Se evalua si el valor que contiene el
+//indice 'i' (0) es menor que 5. Una vez llegue a 5
+//saldrá del bucle o repetición de código, que para
+//este caso se le ha indicado seguir en el bucle 
+//mientras sea menor o igual a 5.
 
 ```
 Ya estando en esta instancia, el ciclo (bucle) `for` entra a realizar las instrucciones que se encuentren dentro del corchete en su primer vez con un valor en el indice de cero (0) y la variable acumIndice en cero tambien..
@@ -72,14 +79,20 @@ Ya estando en esta instancia, el ciclo (bucle) `for` entra a realizar las instru
 ```javascript
 var acumIndice=0;
 for(i=0; i<=5;...){
-    //La primer instrucción imprime en pantalla el valor de entrada i
+    //La primer instrucción imprime en pantalla el
+    // valor de entrada i
     console.log("Entrada No."+i+" al Bloque entre corchetes ")
 
-    //La segunda Instrucción acumula el valor que contiene i en su primera iteración al bloque, asi que su primer valor es cero
+    //La segunda Instrucción acumula el valor que
+    //contiene i en su primera iteración al bloque,
+    //asi que su primer valor es cero
 
     acumIndice = acumIndice+i; // 1er entrada aqui (0 = 0 + 0;)
 
-    //Esta vez se imprime en pantalla el acumulado sumado de i en su 1er entrada y así se irá sumando sucesivamente hasta salir del bucle o repeticiónes.
+    //Esta vez se imprime en pantalla el acumulado
+    // sumado de i en su 1er entrada y así se irá 
+    //sumando sucesivamente hasta salir del bucle o 
+    //repeticiónes.
 
     console.log(" Valor Suma de indice: "+acumIndice);
 
@@ -124,19 +137,123 @@ function sumIndice(){
 }
 
 ```
+Un `for` lo podemos referenciar para realizar operaciones con `Listas` o conjunto de datos que se pueden ordenar.  
+
+Las Listas se pueden recorrer en un arreglo o `FILA` unica, que agrupa en columnas cada carácter. Ejemplo:
+
+//La siguiente instrucción agrupa Carácteres entre 
+//comillas en un arreglo denominado 'cadena'.
+
+cadena="Mi cadena";
+
+
+Note que la frase entre comillas agrupa varias letras (carácteres) en una sola linea (FILA) y cada letra o carácter representa una columna.
+
+Sabemos que está contenida en una sola fila, si tuvieramos que recorrer esta fila, nos referiríamos a
+ella como fila cero (0),  pero en cambio a sus columnas (letra por letra) nos tocaría hacer referencia  a cada posición que tiene cada carácter en esa fila, para ello la recorremos con un indice (eg. i) que apunte a esta posición. 
+Asi, el arreglo o array de lista 'cadena' tendría la dirección cero; cadena[0] para la primer letra ("M") de esta frase; cadena[1], para la segunda letra ("i") y así sucesivamente hasta terminar la frase. "Mi cadena". Tome en cuenta que el espacio entre "Mi" y "cadena" también hace referencia a una columna.
+
+```javascript
+//La siguiente función muestra en consola cada 
+//posición de la cadena "Mi cadena"
+
+function verCadena(cadena){
+
+var arreglo= new String(cadena); //Cremos un nuevo objeto
+//El indice 'i' se utilizará para identificar la 
+//posición de columna de la letra.
+
+// Mostramos la longitud de la cadena 'arreglo' con el metodo length. el valor resultado es : 9
+console.lo("total length: "+arreglo.length);
+
+//Recorremos con indice 'i' la posición de cada carácter 
+
+for(i=0;i<=arreglo.length;i++){
+
+//Mostramos en consola la posicion de cada carácter
+console.log("posicion ["+i+"] Carácter ["+arreglo[i]+"]");
+}
+
+}
+
+```
+La salida en consola es como se muestra a continuación:
+
+```
+posicion [0] Carácter [M]
+posicion [1] Carácter [i]
+posicion [2] Carácter [ ]
+posicion [3] Carácter [c]
+posicion [4] Carácter [a]
+posicion [5] Carácter [d]
+posicion [6] Carácter [e]
+posicion [7] Carácter [n]
+posicion [8] Carácter [a]
+posicion [9] Carácter [undefined]
+```
+
+Preste atención a la última columna "posicion[9]". Esto es así porque aunque length nos mostró 9 posiciones, el for inicia en cero (0). Así que, si contamos desde cero (0) hasta 9, nos daría un total de 10 posiciones. por ello la funcion o método "length" nos deja una posicion de mas denominada undefined, pero en realidad es una posicion en donde no encontró nada definido. En otros lenguajes se denomina NULL como "NADA" o fin de la cadena.
+
+Por ello, en programación se determina que se debe declarar las posiciones reales de una longitud de cadena dada. Sabiendo esto, en la instrucción condicional del for restamos a esa longitud una posición.
+
+`for(i=0;i<=`arreglo.length-1`;i++)`
+
+Ahora veamos como quedarí el codigo y su respetiva salida.
+
+```javascript
+function verCadena(cadena){
+
+var arreglo= new String(cadena);
+//El indice 'i' se utilizará para identificar la posición de columna de la letra.
+
+//Primero mostramos la longitud
+console.log("Total Length: "+arreglo.length);
+
+//Recorremos la cadena (arreglo) con una posicion 
+// menos (-1) que le restamos a la longitud.
+
+for(i=0;i<=arreglo.length-1;i++){
+
+//Ahora mostramos por consola el resultado
+
+console.log("posicion ["+i+"] Carácter ["+arreglo[i]+"]");
+}
+
+}
+
+verCadena("Mi cadena") //Llamamos la funcion
+```
+
+La salida:
+
+```
+
+Total Length: 9
+posicion [0] Carácter [M]
+posicion [1] Carácter [i]
+posicion [2] Carácter [ ]
+posicion [3] Carácter [c]
+posicion [4] Carácter [a]
+posicion [5] Carácter [d]
+posicion [6] Carácter [e]
+posicion [7] Carácter [n]
+posicion [8] Carácter [a]
+
+```
 
 
 
+## * OPERADORS LOGICOS: `&&`, `||`, `!`
 
-## * `&&`, `||`, `!`
+Son `Operadores Lógicos`; síntaxis que representan compuertas lógicas: `&&(AND), ||(OR), !(NOT).` 
 
-Son `Operadores Lógicos`; símbolos que representan compuertas lógicas: `&&(AND), ||(OR), !(NOT).` Estos nos sirven para determinar, en sentencias de condicionales, la lógica en comparaciones de entre dos o mas valores, y de diferentes tipo; cadena, númerico o Booleanos.
+Estas compuertas lógicas nos ayudan a determinar, en sentencias de condicionales compuestas (de dos o mas valores) `if()` si se cumple como verdadereo o falso  cierta lógica. Estos valores pueden constituirse de dos o mas valores, y de diferentes tipos; cadena, númerico o Booleanos.
 
 Ejemplo:
 
 2. Podemos crear una condicion para saber si estamos en verano, para ello determinaremos el mes en que estamos (expresado en números) y evaluaremos si està comprendido entre junio y septiembre(mes seis y nueve, respectivamente).
 
-En realida tendremos que evaluar si el mes es mayor que 5, y ademas menor que 10. Dicho de otro modo, para que la condición resulte ser verdadera, debra cumplirse: `(mes > 5) y (mes<10)`. Para ello uniremos varias condiciones mediante el operador lógico && (lease AND). Con esto se cumple una condición compuesta, si las dos se evaluan como verdaderas , es decir, si el mes es mayor que 5 y (AND) menor que 10.
+En realida tendremos que evaluar si el mes es mayor que 5, y ademas menor que 10. Dicho de otro modo, para que la condición resulte ser verdadera, deberá cumplirse: `(mes > 5) y (mes<10)`. Para ello uniremos varias condiciones mediante el operador lógico && (lease AND). Con esto se cumple una condición compuesta, si las dos se evaluan como verdaderas , es decir, si el mes es mayor que 5 y (AND) menor que 10.
 
 Veamos como quedaría un trozo de código:
 
@@ -155,8 +272,4 @@ function esVerano(mes){
 }
 
 ```
-
-
-
-
 
