@@ -204,9 +204,9 @@ posicion [8] Carácter [a]
 posicion [9] Carácter [undefined]
 ```
 
-Preste atención a la última columna "posicion[9]". Esto es así porque aunque la propiedad `length` nos mostró 9 posiciones, el for inicia en cero (0). Así que, si `for` cuenta desde cero (0) hasta 9, nos daría un total de 10 posiciones. por ello la propiedad `length` nos deja una posicion de más, denominada `undefined`, pero en realidad es una posición en donde no encontró nada definido. En otros lenguajes se denomina NULL como "NADA" o fin de la cadena.
+Preste atención a la última columna "posicion[9]". Esto es así porque aunque la propiedad `length` nos mostró 9 posiciones, el for inicia en cero (0). Así que, si `for` cuenta desde cero (0) hasta 9, nos daría un total de 10 posiciones ya que el condicional evalua menor o IGUAL QUE, lo que lleva el recorrido a esta última posición. por ello la propiedad `length` nos deja una posicion de más, denominada `undefined`, pero en realidad es una posición en donde no encontró nada definido. En otros lenguajes se denomina NULL como "NADA" o fin de la cadena.
 
-Por ello, en programación se determina que se debe declarar las posiciones reales de una longitud de cadena dada. Sabiendo esto, en la instrucción condicional del for restamos a esa longitud una posición.
+Por ello, en programación se determina que se debe declarar las posiciones reales de una longitud de cadena dada. Sabiendo esto, en la instrucción condicional del for restamos a esa longitud una posición, pero tambien podriamos, por el contrario solo evaluar en el paso de condición, solo con el signo MENOR QUE (<) y no habría neesidad de restar 1 a length.
 
 ### for(i=0 ; i<= `arreglo.length-1` ; i++)
 
