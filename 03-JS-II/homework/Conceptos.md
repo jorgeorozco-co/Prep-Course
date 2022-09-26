@@ -209,6 +209,10 @@ Preste atención a la última columna "posicion[9]". Esto es así porque aunque 
 Por ello, en programación se determina que se debe declarar las posiciones reales de una longitud de cadena dada. Sabiendo esto, en la instrucción condicional del for restamos a esa longitud una posición, pero tambien podriamos, por el contrario solo evaluar en el paso de condición, solo con el signo MENOR QUE (<) y no habría neesidad de restar 1 a length.
 
 ### for(i=0 ; i<= `arreglo.length-1` ; i++)
+###  o en su defecto...
+### for(i=0 ; i< `arreglo.length` ; i++)
+
+
 
 Ahora veamos como quedaría el codigo y su respectiva salida.
 
