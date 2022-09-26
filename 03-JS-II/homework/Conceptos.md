@@ -169,11 +169,13 @@ Asi, la palabra "miCadena" tendría la dirección cero; miCadena[0] para la prim
 
 function verCadena(cadena){
 
-var miCadena= new String(cadena); //Cremos un nuevo objeto
+//Creamos un nuevo objeto de tipo STRING(cadena).
+var miCadena= new String(cadena); 
+
 //El indice 'i' se utilizará para identificar la 
 //posición de columna de la letra.
 
-// Mostramos la longitud de la cadena 'miCadena' con el metodo length. el valor resultado es : 9
+// Mostramos la longitud de la cadena 'miCadena' con LA PROPIEDAD length. el valor resultado es : 9
 console.log("total length: "+miCadena.length);
 
 //Recorremos con indice 'i' la posición de cada carácter 
@@ -202,7 +204,7 @@ posicion [8] Carácter [a]
 posicion [9] Carácter [undefined]
 ```
 
-Preste atención a la última columna "posicion[9]". Esto es así porque aunque el método `length` nos mostró 9 posiciones, el for inicia en cero (0). Así que, si `for` cuenta desde cero (0) hasta 9, nos daría un total de 10 posiciones. por ello la función o método `length` nos deja una posicion de más, denominada `undefined`, pero en realidad es una posición en donde no encontró nada definido. En otros lenguajes se denomina NULL como "NADA" o fin de la cadena.
+Preste atención a la última columna "posicion[9]". Esto es así porque aunque la propiedad `length` nos mostró 9 posiciones, el for inicia en cero (0). Así que, si `for` cuenta desde cero (0) hasta 9, nos daría un total de 10 posiciones. por ello la propiedad `length` nos deja una posicion de más, denominada `undefined`, pero en realidad es una posición en donde no encontró nada definido. En otros lenguajes se denomina NULL como "NADA" o fin de la cadena.
 
 Por ello, en programación se determina que se debe declarar las posiciones reales de una longitud de cadena dada. Sabiendo esto, en la instrucción condicional del for restamos a esa longitud una posición.
 
