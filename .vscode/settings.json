@@ -1,0 +1,27 @@
+{
+    "editor.fontSize": 16,
+    "editor.tokenColorCustomizations": {
+    "[Ayu Light]": {}
+    },
+    "workbench.colorCustomizations": {
+    "editorBracketHighlight.foreground1": "#ff4800"
+
+    
+    },
+    "workbench.activityBar.iconClickBehavior": "toggle",
+    "workbench.colorTheme": "Visual Studio Dark",
+    "workbench.preferredHighContrastColorTheme": "Default Light+",
+    "workbench.preferredDarkColorTheme": "Default Dark+",
+    "editor.fontFamily": "JetBrains Mono, Consolas,'Courier New', monospace",
+    "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+    "breadcrumbs.showNumbers": true,
+    "window.zoomLevel": 0,
+    "editor.fontWeight": "normal",
+    "editor.fontLigatures": false,
+    "editor.tabSize": 2,
+    "editor.codeActionsOnSave":
+     {
+    
+    }
+    
+}
